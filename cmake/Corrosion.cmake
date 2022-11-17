@@ -470,7 +470,7 @@ function(_corrosion_parse_platform manifest rust_version target_triple)
         endif()
     elseif(os STREQUAL "linux")
         if(NOT COR_NO_STD)
-           list(APPEND libs "dl" "rt" "pthread" "gcc_s" "c" "m" "util")
+           #list(APPEND libs "dl" "rt" "pthread" "gcc_s" "c" "m" "util")
         endif()
     endif()
 
@@ -592,6 +592,7 @@ function(_corrosion_add_library_target workspace_manifest_path target_name has_s
     endif()
 
     add_library(${target_name} INTERFACE)
+    target_link_libraries(${target_name} INTERFACE IntelPin)
 
     if(has_cdylib AND has_staticlib)
         if(BUILD_SHARED_LIBS)

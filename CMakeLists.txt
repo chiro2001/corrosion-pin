@@ -62,6 +62,8 @@ if (_CORROSION_TOP_LEVEL)
     enable_language(CXX)
 endif()
 
+include(../cmake/IntelPin.cmake)
+
 # This little bit self-hosts the Corrosion toolchain to build the generator
 # tool.
 #
