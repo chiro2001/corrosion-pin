@@ -471,6 +471,7 @@ function(_corrosion_parse_platform manifest rust_version target_triple)
     elseif(os STREQUAL "linux")
         if(NOT COR_NO_STD)
            #list(APPEND libs "dl" "rt" "pthread" "gcc_s" "c" "m" "util")
+           list(APPEND libs "rt" "pthread" "util")
         endif()
     endif()
 
